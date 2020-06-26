@@ -1,7 +1,7 @@
 {
   "name": "@enbock/simple-storage",
   "description": "A simple storage for Progressive Web Applications.",
-  "version": "0.1.0-dev.2",
+  "version": "1.0.0",
   "homepage": "https://github.com/enbock/Simple-Storage/",
   "license": "MIT",
   "author": "Endre Bock <dev@itbock.de>",
@@ -10,13 +10,13 @@
   },
   "scripts": {
     "build": "npx tsc --build tsconfig.json -v",
-    "test": "jest --coverage --verbose",
-    "deploy": "yarn publish --non-interactive"
+    "test": "jest --coverage --verbose"
   },
   "devDependencies": {
     "@babel/core": "^7.10.3",
     "@babel/preset-typescript": "^7.10.1",
     "@babel/runtime": "^7.10.3",
+    "@enbock/state-value-observer": "^1.1.2",
     "@types/jest": "^26.0.3",
     "jest": "^26.1.0",
     "ts-jest": "^26.1.1",
