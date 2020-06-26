@@ -1,7 +1,7 @@
 {
   "name": "@enbock/simple-storage",
   "description": "A simple storage for Progressive Web Applications.",
-  "version": "0.1.0-dev.1",
+  "version": "0.1.0-dev.2",
   "homepage": "https://github.com/enbock/Simple-Storage/",
   "license": "MIT",
   "author": "Endre Bock <dev@itbock.de>",
