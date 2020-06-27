@@ -315,10 +315,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@enbock/state-value-observer@^1.1.2":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@enbock/state-value-observer/-/state-value-observer-1.1.2.tgz#9578d0246247f0de1dbc89c8f8a133debf36afb6"
-  integrity sha512-CQxIvzIlkAz+8blxIc0aVNProhegs7eJ/6zNjkFin9d/uQzc/7MCZJnweQf2+eqRhyODj7mCDyuWbvJ6ScQneQ==
+"@enbock/state-value-observer@^1.1.4":
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@enbock/state-value-observer/-/state-value-observer-1.1.4.tgz#8e875f0f3b5f1657ccbb8f84300e78307879a268"
+  integrity sha512-7yAG1nDTIDbjxLvOnuMVnk2iFnQ7y+5YOshZqZVSz1x5UQjB54/ASPPmI4fyU7QG8A7iArJ1vu9ilQI1p16Dbg==
 
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"

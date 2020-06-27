@@ -1,7 +1,7 @@
 {
   "name": "@enbock/simple-storage",
   "description": "A simple storage for Progressive Web Applications.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "https://github.com/enbock/Simple-Storage/",
   "license": "MIT",
   "author": "Endre Bock <dev@itbock.de>",
@@ -13,7 +13,7 @@
     "test": "jest --coverage --verbose"
   },
   "dependencies": {
-    "@enbock/state-value-observer": "^1.1.2"
+    "@enbock/state-value-observer": "^1.1.4"
   },
   "devDependencies": {
     "@babel/core": "^7.10.3",
