@@ -85,4 +85,5 @@ yarn test
 yarn build
 ```
 
+[ECMAScript® 2020]:https://tc39.es/ecma262/
 [Web Storage Interface]:(https://www.w3.org/TR/webstorage/#the-storage-interface)
