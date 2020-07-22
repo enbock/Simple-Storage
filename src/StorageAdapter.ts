@@ -1,15 +1,15 @@
-import {IObserverAdapter, IOnChangeCallback} from '@enbock/state-value-observer/Observer';
+import {ObserverAdapter, OnChangeCallback} from '@enbock/state-value-observer/ValueObserver';
 
-export default class StorageAdapter<T> implements IObserverAdapter<T> {
-  protected baseAdapter: IObserverAdapter<T>;
-  protected onChangeCallback: IOnChangeCallback<T>;
+export default class StorageAdapter<Type> implements ObserverAdapter<Type> {
+  protected baseAdapter: ObserverAdapter<Type>;
+  protected onChangeCallback: OnChangeCallback<Type>;
 
-  constructor(baseAdapter: IObserverAdapter<T>, onChangeCallback: IOnChangeCallback<T>) {
+  constructor(baseAdapter: ObserverAdapter<Type>, onChangeCallback: OnChangeCallback<Type>) {
     this.baseAdapter = baseAdapter;
     this.onChangeCallback = onChangeCallback;
   }
 
-  onChange(newValue: T): void {
+  onChange(newValue: Type): void {
     this.onChangeCallback(newValue);
     this.baseAdapter.onChange(newValue);
   }
