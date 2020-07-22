@@ -1,4 +1,4 @@
-import {IObserverAdapter} from '@enbock/state-value-observer/Observer';
+import {ObserverAdapter} from '@enbock/state-value-observer/ValueObserver';
 import DataStorage from './DataStorage';
 import StorageAdapter from './StorageAdapter';
 
@@ -17,7 +17,7 @@ describe(DataStorage, () => {
 
   it('Attach adapter and store value', () => {
     const dataStorage: DataStorage = new DataStorage('test', storage);
-    const adapter: IObserverAdapter<string> = {onChange: jest.fn()};
+    const adapter: ObserverAdapter<string> = {onChange: jest.fn()};
     const storageAdapter: StorageAdapter<string> = dataStorage.attach<string>('value', adapter);
 
     storageAdapter.onChange('new');

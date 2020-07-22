@@ -1,14 +1,14 @@
-import {IObserverAdapter, IOnChangeCallback} from '@enbock/state-value-observer/Observer';
+import {ObserverAdapter, OnChangeCallback} from '@enbock/state-value-observer/ValueObserver';
 import StorageAdapter from './StorageAdapter';
 
-export interface IAdapterDictionary {
+export interface AdapterDictionary {
   [index: string]: StorageAdapter<any>
 }
 
 export default class DataStorage {
   protected domain: string;
   protected storage: Storage;
-  protected adapters: IAdapterDictionary;
+  protected adapters: AdapterDictionary;
 
   constructor(domain: string, storage: Storage) {
     this.domain = domain;
@@ -16,25 +16,25 @@ export default class DataStorage {
     this.adapters = {};
   }
 
-  attach<T>(key: string, adapter: IObserverAdapter<T>): StorageAdapter<T> {
-    const callback: IOnChangeCallback<T> = (newValue: T) => this.updateStorage(key, newValue);
-    const storageAdapter: StorageAdapter<T> = new StorageAdapter<T>(adapter, callback);
+  attach<Type>(key: string, adapter: ObserverAdapter<Type>): StorageAdapter<Type> {
+    const callback: OnChangeCallback<Type> = (newValue: Type) => this.updateStorage(key, newValue);
+    const storageAdapter: StorageAdapter<Type> = new StorageAdapter<Type>(adapter, callback);
     this.adapters[key] = storageAdapter;
 
     return storageAdapter;
   }
 
-  loadData<T>(key: string, initialValue: T): T {
-    const initJSON: string | null = this.storage.getItem(this.domain + '::' + key);
-    let data: T = initialValue;
-    if (initJSON != null) {
-      data = JSON.parse(initJSON) as T;
+  loadData<Type>(key: string, initialValue: Type): Type {
+    const serializedJsonData: string | null = this.storage.getItem(this.domain + '::' + key);
+    let data: Type = initialValue;
+    if (serializedJsonData != null) {
+      data = JSON.parse(serializedJsonData) as Type;
     }
 
     return data;
   }
 
-  protected updateStorage<T>(key: string, newValue: T) {
+  protected updateStorage<Type>(key: string, newValue: Type) {
     this.storage.setItem(this.domain + '::' + key, JSON.stringify(newValue));
   }
 }
